@@ -51,7 +51,7 @@ create table tarefas (
     usuario_id int null,
     aberta BOOLEAN DEFAULT TRUE,
     
-    descricao varchar (500),
+    descricao varchar(500),
     data_criacao timestamp default current_timestamp,
     
     constraint fk_tarefas_tarefas
@@ -74,9 +74,16 @@ create table horas (
 	id int auto_increment primary key,
     tarefa_id int null,
     usuario_id int not null,
-    descricao varchar (500),
+    titulo_sessao varchar(255) not null,
+    tipo_atividade varchar(30) not null,
+    descricao text not null,
+    data_lancamento timestamp not null,
+    inicio time not null,
+    fim time not null,
+    justificativa text null,
+    motivo_rejeicao text null,
+    estado varchar(30) default 'PENDENTE',
     data_criacao timestamp default current_timestamp,
-    estado varchar(30),
     
     constraint fk_horas_tarefa
 		foreign key (tarefa_id)

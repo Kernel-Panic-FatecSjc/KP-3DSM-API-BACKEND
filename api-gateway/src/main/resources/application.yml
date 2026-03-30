@@ -9,3 +9,6 @@ logging:
   level:
     org.springframework.cloud.gateway: DEBUG
     org.springframework.web.reactive: DEBUG
+
+jwt:
+  secret: sua_chave_secreta_muito_segura_com_mais_de_256_bits_para_hs256

@@ -25,7 +25,7 @@ public class AutenticacaoFiltro extends AbstractGatewayFilterFactory<Autenticaca
     }
 
     public static class Config {
-        private List<String> roles; // Agora é uma lista!
+        private List<String> roles;
         public List<String> getRoles() { return roles; }
         public void setRoles(List<String> roles) { this.roles = roles; }
     }
@@ -65,7 +65,7 @@ public class AutenticacaoFiltro extends AbstractGatewayFilterFactory<Autenticaca
 
                 return chain.filter(exchange.mutate().request(requestMutada).build());
 
-            } catch (ResponseStatusException e) { // Captura o 403 que jogamos acima
+            } catch (ResponseStatusException e) { 
                 throw e;
             } catch (Exception e) {
                 throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Token inválido ou expirado");

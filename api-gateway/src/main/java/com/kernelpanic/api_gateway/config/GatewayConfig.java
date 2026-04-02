@@ -24,13 +24,13 @@ public class GatewayConfig {
         return builder.routes()
                 // Rota de Usuários: PROTEGIDA
                 .route("user-service", r -> r
-                        .path("/usuarios/**")
+                        .path("/usuario/**")
                         .filters(f -> f.filter(authFilter.apply(c -> c.setRoles(Arrays.asList("ROLE_USER", "ROLE_ADMIN")))))
                         .uri("http://localhost:8083"))
 
                 // Rota de Projetos: PROTEGIDA
                 .route("project-service", r -> r
-                        .path("/projects/**")
+                        .path("/projeto/**")
                         .filters(f -> f.filter(authFilter.apply(new AutenticacaoFiltro.Config())))
                         .uri("http://localhost:8082"))
 
@@ -40,5 +40,11 @@ public class GatewayConfig {
                         .uri("http://localhost:8081"))
                 
                 .build();
+                //  .route("apontamento dehoras", r -> r
+                //         .path("/auth/**")
+                //         .uri("http://localhost:8084"))
+                
+                // .build();
+
     }
 }

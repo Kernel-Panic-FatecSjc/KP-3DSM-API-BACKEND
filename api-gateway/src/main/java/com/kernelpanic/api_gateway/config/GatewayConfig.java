@@ -43,6 +43,12 @@ public class GatewayConfig {
                                                 .path("/auth/**")
                                                 .uri("http://localhost:8081"))
 
+                                // Rota de Apontamento de Horas: PROTEGIDA
+                                .route("apotamento-horas", r -> r
+                                                .path("/horas/**")
+                                                //.filters(f -> f.filter(authFilter.apply(new AutenticacaoFiltro.Config())))
+                                                .uri("http://localhost:8084"))
+
                                 .build();
                 // .route("apontamento dehoras", r -> r
                 // .path("/auth/**")
@@ -56,7 +62,7 @@ public class GatewayConfig {
         public CorsWebFilter corsWebFilter() {
         CorsConfiguration config = new CorsConfiguration();
         config.setAllowedOrigins(Arrays.asList("http://localhost:3000")); 
-        config.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
+        config.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS","PATCH"));
         config.setAllowedHeaders(Arrays.asList("*"));
         config.setAllowCredentials(true);
 

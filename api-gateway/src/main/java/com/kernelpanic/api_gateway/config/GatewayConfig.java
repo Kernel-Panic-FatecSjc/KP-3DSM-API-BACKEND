@@ -29,8 +29,7 @@ public class GatewayConfig {
                                 // Rota de Usuários: PROTEGIDA
                                 .route("user-service", r -> r
                                                 .path("/usuario/**")
-                                                .filters(f -> f.filter(authFilter.apply(c -> c
-                                                                .setRoles(Arrays.asList("ROLE_USER", "ROLE_ADMIN")))))
+                                                // .filters(f -> f.filter(authFilter.apply(c -> c.setRoles(Arrays.asList("ROLE_USER", "ROLE_ADMIN")))))
                                                 .uri("http://localhost:8083"))
 
                                 // Rota de Projetos: PROTEGIDA

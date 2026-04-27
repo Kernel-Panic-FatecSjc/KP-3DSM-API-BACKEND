@@ -23,6 +23,7 @@ CREATE TABLE projeto (
     descricao VARCHAR(300),
     status ENUM('EM_PLANEJAMENTO','EM_ANDAMENTO','CONCLUIDO'),
     prazo TIMESTAMP NULL,
+    valor_contratado float,
     dataCriacao TIMESTAMP NOT NULL
 );
 

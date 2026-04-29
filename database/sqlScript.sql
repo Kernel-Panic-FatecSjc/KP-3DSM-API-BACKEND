@@ -24,9 +24,11 @@ CREATE TABLE projeto (
     status ENUM('EM_PLANEJAMENTO','EM_ANDAMENTO','CONCLUIDO'),
     prazo TIMESTAMP NULL,
     valor_contratado float,
-    dataCriacao TIMESTAMP NOT NULL
-);
+    responsavelId INT,
+    dataCriacao TIMESTAMP NOT NULL,
 
+    FOREIGN KEY (responsavelId) REFERENCES usuario(id)
+);
 -- US02 - Tarefa
 CREATE TABLE tarefa (
     id INT AUTO_INCREMENT PRIMARY KEY,

@@ -10,6 +10,6 @@
 [submodule "usuario-service"]
 	path = usuario-service
 	url = https://github.com/Kernel-Panic-FatecSjc/KP-3DSM-API-usuario-service.git
-[submodule "tarefa-service"]
-	path = tarefa-service
-	url = https://github.com/Kernel-Panic-FatecSjc/KP-3DSM-API-tarefa-service.git
+[submodule "task-service"]
+	path = task-service
+	url = https://github.com/Kernel-Panic-FatecSjc/KP-3DSM-API-task-service.git

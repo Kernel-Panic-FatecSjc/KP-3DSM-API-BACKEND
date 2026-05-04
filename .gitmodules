@@ -11,5 +11,6 @@
 	path = usuario-service
 	url = https://github.com/Kernel-Panic-FatecSjc/KP-3DSM-API-usuario-service.git
 [submodule "task-service"]
-	path = task-service
-	url = https://github.com/Kernel-Panic-FatecSjc/KP-3DSM-API-task-service.git
+    path = task-service
+    url = https://github.com/Kernel-Panic-FatecSjc/KP-3DSM-API-task-service.git
+    branch = main

@@ -12,3 +12,8 @@ logging:
 
 jwt:
   secret: sua_chave_secreta_muito_segura_com_mais_de_256_bits_para_hs256
+eureka:
+  client:
+    enabled: false
+    register-with-eureka: false
+    fetch-registry: false

@@ -30,31 +30,31 @@ public class GatewayConfig {
                                 .route("user-service", r -> r
                                                 .path("/usuario/**")
                                                 // .filters(f -> f.filter(authFilter.apply(c -> c.setRoles(Arrays.asList("ROLE_USER", "ROLE_ADMIN")))))
-                                                .uri("http://localhost:8083"))
+                                                .uri("http://host.docker.internal:8083"))
 
                                 // Rota de Projetos: PROTEGIDA
                                 .route("project-service", r -> r
                                                 .path("/projeto/**")
                                                 //.filters(f -> f.filter(authFilter.apply(new AutenticacaoFiltro.Config())))
-                                                .uri("http://localhost:8082"))
+                                                .uri("http://host.docker.internal:8082"))
 
                                 // Rota de Autenticação (Login): PÚBLICA
                                 .route("auth-service", r -> r
                                                 .path("/auth/**")
-                                                .uri("http://localhost:8081"))
+                                                .uri("http://host.docker.internal:8084"))
 
                                 // Rota de Apontamento de Horas: PROTEGIDA
                                 .route("apotamento-horas", r -> r
                                                 .path("/horas/**")
                                                 //.filters(f -> f.filter(authFilter.apply(new AutenticacaoFiltro.Config())))
-                                                .uri("http://localhost:8084"))
+                                                .uri("http://host.docker.internal:8084"))
 
-                                .build();
+                                .route("task-service", r -> r.path("/tarefas/**").uri("http://host.docker.internal:8085")).build();
                 // .route("apontamento dehoras", r -> r
                 // .path("/auth/**")
-                // .uri("http://localhost:8084"))
+                // .uri("http://host.docker.internal:8084"))
 
-                // .build();
+                // .route("task-service", r -> r.path("/tarefas/**").uri("http://host.docker.internal:8085")).build();
 
         }
 

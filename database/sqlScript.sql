@@ -9,6 +9,7 @@ CREATE TABLE usuario (
     senha VARCHAR(255) NOT NULL,
     cargo ENUM('CLT','PJ','PJ/Hora'),
     salario DECIMAL(10,2) NOT NULL,
+    tipoContrato VARCHAR(50),
     ativo BOOLEAN NOT NULL DEFAULT TRUE,
     gerenteId INT NULL,
     dataCriacao TIMESTAMP NOT NULL,
